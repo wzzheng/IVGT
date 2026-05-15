@@ -1,7 +1,5 @@
 # IVGT: Implicit Visual Geometry Transformer for Neural Scene Representation
 
-<div align="center">
-
 ### [[Paper]]() [[Project]](https://wzzheng.net/IVGT/)
 
 [Yuqi Wu](https://ykiwu.github.io/)<sup>\*</sup>, [Tianyu Hu](https://github.com/ttt-y)<sup>\*</sup>, [Wenzhao Zheng](https://wzzheng.net/)<sup>\*†</sup>, [Yuanhui Huang](https://huang-yh.github.io/), [Haowen Sun](https://scholar.google.com/citations?hl=zh-CN&user=tGepc6EAAAAJ), [Jie Zhou](https://scholar.google.com/citations?user=6a79aPwAAAAJ&hl=en&authuser=1), [Jiwen Lu](http://ivg.au.tsinghua.edu.cn/Jiwen_Lu/)
@@ -12,9 +10,7 @@
 
 We propose **IVGT**, an **I**mplicit **V**isual **G**eometry **T**ransformer that implicitly models coherent 3D geometry and appearance from pose-free multi-view images in a **single feedforward pass**. It learns a continuous neural scene representation in a global canonical coordinate system, enabling diverse downstream tasks including mesh reconstruction, novel-view synthesis, and surface estimation across diverse scenes.
 
-<p align="center">
-<img src="./assets/teaser_new.png" width="100%" />
-</p>
+![teaser](./assets/teaser_new.png)
 
 ## News
 
@@ -32,22 +28,20 @@ Most existing visual geometry foundation models (DUSt3R, VGGT, Point3R) follow a
 
 IVGT takes the opposite approach: we learn a **continuous 3D neural field** (SDF-based) queryable at any position in space.
 
-<p align="center">
-<img src="./assets/method_comparison.png" width="100%" />
-</p>
+![method_comparison](./assets/method_comparison.png)
 
 > **Explicit models** decode per-pixel 3D coordinates for each view → discrete, view-indexed pointmaps.  
 > **IVGT (implicit)** learns a continuous 3D field → direct surface extraction and novel view rendering without post-processing.
 
 The advantage of implicit geometry over explicit pointmaps is most visible in surface quality. Pixel-aligned pointmap reconstruction suffers from sparsity and discontinuities, especially at object boundaries, while meshes extracted from IVGT's continuous SDF field are significantly more coherent and complete:
 
-<p align="center">
-<img src="./assets/vggtcompare_all.png" width="100%" />
-</p>
+![vggtcompare_all](./assets/vggtcompare_all.png)
 
 ---
 
 ### 2. Pose-free Feed-forward Mesh Reconstruction
+
+![main](./assets/main.png)
 
 Given pose-free multi-view images, IVGT:
 
@@ -57,15 +51,11 @@ Given pose-free multi-view images, IVGT:
 
 The continuous SDF field enables direct mesh extraction via Marching Cubes without any post-processing. IVGT produces complete and coherent colored meshes across diverse indoor scenes and objects in a single forward pass:
 
-<p align="center">
-<img src="./assets/meshmono.png" width="100%" />
-</p>
+![meshmono](./assets/meshmono.png)
 
 > Qualitative mesh comparison on ScanNet. IVGT produces geometrically complete and surface-coherent meshes in one forward pass; per-scene optimization baselines often yield incomplete or fragmented surfaces.
 
-<p align="center">
-<img src="./assets/allcolorvis.png" width="100%" />
-</p>
+![allcolorvis](./assets/allcolorvis.png)
 
 > Colored mesh reconstruction across diverse indoor scenes and objects of varying scale, without any test-time optimization.
 
@@ -73,27 +63,22 @@ The continuous SDF field enables direct mesh extraction via Marching Cubes witho
 
 ### 3. Unified Rendering and Surface Extraction from a Single SDF Field
 
-The same SDF field supports **three output modalities from a single representation**:
+The same SDF field supports **four output modalities from a single representation**:
 
 - **RGB rendering** via differentiable volume rendering (SDF → density → color)
 - **Depth maps** from the expected ray termination depth
 - **Surface normal maps** from the SDF gradient
 - **Continuous meshes** via Marching Cubes — directly and efficiently, without any post-processing
 
-<p align="center">
-<img src="./assets/2d_render.png" width="100%" />
-</p>
+![2d_render](./assets/2d_render.png)
 
 > IVGT renders RGB images, depth maps, and surface normal maps from arbitrary novel viewpoints. All three modalities are derived from the same SDF field without task-specific heads.
 
 ---
 
-
 ## Overview
 
-<p align="center">
-<img src="./assets/main.png" width="100%" />
-</p>
+![main](./assets/main.png)
 
 Reconstructing coherent 3D geometry and appearance from unposed multi-view images is a fundamental yet challenging problem in computer vision. Most existing visual geometry foundation models predict explicit geometry by regressing pixel-aligned pointmaps, suffering from redundancy and limited geometric continuity. IVGT learns a continuous implicit neural scene representation in a canonical coordinate system, supports continuous spatial queries at any 3D position, and predicts SDF values and colors using lightweight decoders — enabling rendering and surface extraction from arbitrary viewpoints.
 
