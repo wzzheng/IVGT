@@ -41,15 +41,8 @@ The advantage of implicit geometry over explicit pointmaps is most visible in su
 
 ### 2. Pose-free Feed-forward Mesh Reconstruction
 
-![main](./assets/main.png)
 
-Given pose-free multi-view images, IVGT:
-
-1. **Encodes** each image into tokens via a DINOv2 backbone, then jointly processes all views with alternating intra-view and cross-view attention — implicitly aligning multi-view observations without camera poses.
-2. **Queries** the learned representation at arbitrary 3D points: features are sampled from projected pixel locations across all valid views.
-3. **Decodes** SDF values and view-dependent colors via cascaded MLP decoders, where color is conditioned on the SDF gradient (surface normal) for physically grounded appearance prediction.
-
-The continuous SDF field enables direct mesh extraction via Marching Cubes without any post-processing. IVGT produces complete and coherent colored meshes across diverse indoor scenes and objects in a single forward pass:
+IVGT produces complete and coherent colored meshes across diverse indoor scenes and objects in a single forward pass:
 
 ![meshmono](./assets/meshmono.png)
 
