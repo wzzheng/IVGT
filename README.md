@@ -97,7 +97,7 @@ IVGT extracts continuous, coherent meshes directly from its SDF field. As a **ge
 | COLMAP | Per-Scene | 0.047 | 0.235 | 0.141 | 0.537 |
 | NeuS | Per-Scene | 0.179 | 0.208 | 0.194 | 0.291 |
 | MonoSDF | Per-Scene | **0.035** | **0.048** | **0.042** | **0.733** |
-| **IVGT** | **Generalizable** | 0.069 | **0.051** | **0.060** | **0.647** |
+| **IVGT** | Generalizable | 0.069 | 0.051 | 0.060 | 0.647 |
 
 > IVGT ranks second only to MonoSDF — which requires **hours of per-scene optimization** — while running in a **single forward pass**.
 
@@ -119,22 +119,20 @@ IVGT's depth maps (decoded directly from per-view features) achieve state-of-the
 | FLARE | 16.33 | 0.574 | 15.35 | 0.516 |
 | AnySplat | 17.62 | 0.616 | 18.31 | 0.569 |
 | WorldMirror | **20.62** | **0.706** | **20.92** | **0.667** |
-| **IVGT** | **18.97** | **0.656** | **19.74** | **0.627** |
+| **IVGT** | 18.97 | 0.656 | 19.74 | 0.627 |
 
-### Depth and Surface Normal Estimation
-
-**Depth Estimation (Abs Rel ↓):**
+### Depth Estimation (Abs Rel ↓)
 
 | Method | NYUv2 Mono | Sintel Mono | Sintel Video |
 |---|---|---|---|
 | VGGT | **0.056** | 0.606 | 0.299 |
 | **IVGT** | 0.063 | **0.309** | **0.295** |
 
-**Surface Normal Estimation (NYUv2, within 30° ↑):**
+### Surface Normal Estimation (NYUv2, within 30° ↑)
 
 | Method | NYUv2 mean ↓ | NYUv2 30° ↑ | iBims-1 mean ↓ |
 |---|---|---|---|
-| DSine | 16.4 | 83.5 | 17.1 |
+| DSine | **16.4** | 83.5 | **17.1** |
 | **IVGT** | 16.6 | **84.2** | 20.1 |
 
 ### Camera Pose Estimation
@@ -145,6 +143,7 @@ IVGT's depth maps (decoded directly from per-view features) achieve state-of-the
 | VGGT | 0.035 | 0.169 | **0.012** |
 | WorldMirror | 0.037 | **0.121** | **0.012** |
 | **IVGT** | **0.032** | 0.140 | **0.012** |
+
 
 ---
 
