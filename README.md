@@ -1,7 +1,7 @@
 # IVGT: Implicit Visual Geometry Transformer for Neural Scene Representation
 ### [[Paper]]() [[Project]](https://wzzheng.net/IVGT/)
 
-> Terra: Explorable Native 3D World Model with Point Latents
+> IVGT: Implicit Visual Geometry Transformer for Neural Scene Representation
 
 > [Yuqi Wu](https://ykiwu.github.io/)<sup>\*</sup>, [Tianyu Hu](https://github.com/ttt-y)<sup>\*</sup>, [Wenzhao Zheng](https://wzzheng.net/)<sup>*</sup>$\dagger$, [Yuanhui Huang](https://huang-yh.github.io/), [Haowen Sun](https://scholar.google.com/citations?hl=zh-CN&user=tGepc6EAAAAJ), [Jie Zhou](https://scholar.google.com/citations?user=6a79aPwAAAAJ&hl=en&authuser=1), [Jiwen Lu](http://ivg.au.tsinghua.edu.cn/Jiwen_Lu/)
 
