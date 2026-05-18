@@ -218,8 +218,8 @@
   <h2 class="title is-4" style="font-weight: 700;">Qualitative Comparison</h2>
           <div class="content has-text-justified" style="align-self: flex-start;">
             <p>
-               FIXME: DVGT significantly outperforms all other methods across various driving scenarios. 
-               Below we compare the dense 3D reconstruction results of <b>DVGT (Ours)</b> against <b>VGGT</b> and <b>MapAnything</b>.
+               The advantage of implicit geometry over explicit pointmaps is most visible in surface quality. Pixel-aligned pointmap reconstruction suffers from sparsity and discontinuities, especially at object boundaries, while meshes extracted from IVGT's continuous SDF field are significantly more coherent and complete.
+               Below we compare the dense 3D reconstruction results of <b>IVGT (Ours)</b> against <b>VGGT</b>.
             </p>
           </div>
             <div class="model-container" id="model-compare-wrapper">
@@ -373,11 +373,11 @@
     <div class="container is-max-desktop content">
       <h2 class="title is-4" style="font-weight: 700;">BibTeX</h2>
       <pre><code>
-  <!-- @inproceedings{zuo2025dvgt,
-  title={DVGT: Driving Visual Geometry Transformer},
-  author={Zuo, Sicheng and Xie, Zixun and Zheng, Wenzhao and Xu, Shaoqing and Li, Fang and Jiang, Shengyin and Chen, Long and Yang, Zhi-Xin and Lu, Jiwen},
-  booktitle={arXiv preprint arXiv:2512.16919},
-  year={2025}} -->
+  <!-- @inproceedings{,
+  title={IVGT: Implicit Visual Geometry Transformer for Neural Scene Representation},
+  author={Yuqi Wu, Tianyu Hu, Wenzhao Zheng, Yuanhui Huang, Haowen Sun, Jie Zhou, Jiwen Lu},
+  booktitle={arXiv preprint arXiv:2605.16258},
+  year={2026}} -->
 </code></pre>
     </div>
   </section>
