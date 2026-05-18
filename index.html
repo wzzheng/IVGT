@@ -497,12 +497,12 @@
       const viewer = document.getElementById(id);
       if (!viewer) return;
 
-      viewer.addEventListener('camera-change', (event) => {
-        const target = viewer.getCameraTarget();
-        if (Math.abs(target.x) > 0.001 || Math.abs(target.y) > 0.001 || Math.abs(target.z) > 0.001) {
-          viewer.cameraTarget = '0m 0m 0m';
-        }
-      });
+      // viewer.addEventListener('camera-change', (event) => {
+      //   const target = viewer.getCameraTarget();
+      //   if (Math.abs(target.x) > 0.001 || Math.abs(target.y) > 0.001 || Math.abs(target.z) > 0.001) {
+      //     viewer.cameraTarget = '0m 0m 0m';
+      //   }
+      // });
 
       const updateMaterial = () => {
         const symbol = Object.getOwnPropertySymbols(viewer).find(x => x.description === 'scene');
