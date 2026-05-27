@@ -150,5 +150,10 @@ We will release the code soon.
 
 If you find this project helpful, please consider citing the following paper:
 ```bibtex
-
+@article{wu2026ivgt,
+  title={IVGT: Implicit Visual Geometry Transformer for Neural Scene Representation},
+  author={Wu, Yuqi and Hu, Tianyu and Zheng, Wenzhao and Huang, Yuanhui and Sun, Haowen and Zhou, Jie and Lu, Jiwen},
+  journal={arXiv preprint arXiv:2605.16258},
+  year={2026}
+}
 ```
